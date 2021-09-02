@@ -1,0 +1,420 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  EnabledByDefault: true # disable should be explicit
+  Exclude:
+    - 'db/helpers/**/*'
+    - 'db/seeds/**/*'
+    - 'db/seeds.rb'
+    - 'db/schema.rb'
+    - 'ui/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - '.git/**/*'
+  CacheRootDirectory: tmp
+
+RSpec/MultipleMemoizedHelpers:
+  # FIXME: This is the highest value we now have in the code base.
+  # Let's see if we can bring it down to the default (6)
+  Max: 20
+
+Bundler/GemVersion:
+  Enabled: false
+
+Bundler/GemComment:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+  IndentOneStep: true
+
+Layout/ClassStructure:
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - association
+    - public_attribute_macros
+    - public_delegate
+    - macros
+    - public_class_methods
+    - initializer
+    - public_methods
+    - protected_attribute_macros
+    - protected_methods
+    - private_attribute_macros
+    - private_delegate
+    - private_methods
+
+Layout/EmptyLineBetweenDefs:
+  Enabled: false
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstArrayElementLineBreak:
+  Enabled: false
+
+Layout/FirstHashElementLineBreak:
+  Enabled: false
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: false
+
+Layout/HeredocArgumentClosingParenthesis:
+  Enabled: false
+
+Layout/MultilineArrayLineBreaks:
+  Enabled: false
+
+Layout/MultilineAssignmentLayout:
+  Enabled: false
+
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: false
+
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Layout/RedundantLineBreak:
+  Enabled: false
+
+Layout/SingleLineBlockChain:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+
+Lint/AssignmentInCondition:
+  Exclude:
+    - 'scripts/**/*'
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+
+Lint/ConstantResolution:
+  Enabled: false
+
+Lint/EmptyClass:
+  Enabled: false
+
+Lint/HeredocMethodCallPosition:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Lint/NumberConversion:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 55
+  Exclude:
+    - 'app/lib/pain/**/*'
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Max: 135
+  Exclude:
+    - 'config/routes.rb'
+    - 'spec/**/*'
+
+Metrics/BlockNesting:
+  Max: 4
+
+Metrics/ClassLength:
+  Max: 229
+
+Metrics/CyclomaticComplexity:
+  Max: 17
+
+Metrics/MethodLength:
+  Max: 48
+  Exclude:
+    - 'app/lib/pain/**/*'
+    - 'lib/tasks/**/*'
+    - 'scripts/**/*'
+
+Metrics/ModuleLength:
+  Max: 189
+  Exclude:
+    - 'app/lib/bank_analysis/pdf_parser/**/*'
+
+Metrics/ParameterLists:
+  Max: 6
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+Naming/InclusiveLanguage:
+  Enabled: false
+
+# Something like duplicate(x,y) should be ok.
+# Use common sense.
+Naming/MethodParameterName:
+  Enabled: false
+
+Naming/RescuedExceptionsVariableName:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Performance/ArraySemiInfiniteRangeSlice:
+  Enabled: false
+
+Performance/ChainArrayAllocation:
+  Enabled: false
+
+Performance/OpenStruct:
+  Enabled: false
+
+Performance/CollectionLiteralInLoop:
+  Enabled: false
+
+Rails/BulkChangeTable:
+  Enabled: false
+
+Rails/Date:
+  Enabled: false
+
+Rails/Delegate:
+  Enabled: false
+
+# So old that I am not afraid it will be used.
+# It interferes with non-Rails class' method names.
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/EnvironmentVariableAccess:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/LinkToBlank:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Rails/ReversibleMigrationMethodDefinition:
+  Enabled: false
+
+Rails/SaveBang:
+  Include:
+    - 'spec/**/*'
+
+RSpec/AlignLeftLetBrace:
+  Enabled: false
+
+RSpec/AlignRightLetBrace:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/DescribedClass:
+  Enabled: false
+
+# Policies use a special ActionPolicy DSL that isn't compatible with this check
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - 'spec/policies/**/*'
+
+# Policies use a special ActionPolicy DSL that isn't compatible with this check
+RSpec/ScatteredSetup:
+  Exclude:
+    - 'spec/policies/**/*'
+
+RSpec/ExampleLength:
+  Max: 100
+
+RSpec/ExampleWording:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/LeakyConstantDeclaration:
+  Enabled: false
+
+RSpec/MessageExpectation:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/Pending:
+  Enabled: false
+
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/AutoResourceCleanup:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - 'app/lib/bank_analysis/pdf_parser/**/*'
+
+Style/ConstantVisibility:
+  Enabled: false
+
+Style/Copyright:
+  Enabled: false
+
+Style/DateTime:
+  Enabled: false
+
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/ImplicitRuntimeError:
+  Enabled: false
+
+Style/InlineComment:
+  Enabled: false
+
+Style/IpAddresses:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+
+Style/MissingElse:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/**/*'
+    - 'spec/factories.rb'
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/OptionHash:
+  Enabled: false
+
+Style/RedundantBegin:
+  Enabled: false
+
+Style/RegexpLiteral:
+  AllowInnerSlashes: true
+
+Style/RescueStandardError:
+  Enabled: false
+
+Style/ReturnNil:
+  Enabled: false
+
+Style/Send:
+  Enabled: false
+
+Style/StringHashKeys:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/TopLevelMethodDefinition:
+  Include:
+    - 'app/**/*'
+
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/UnlessLogicalOperators:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/AsciiComments:
+  AllowedChars:
+    - '▯'
