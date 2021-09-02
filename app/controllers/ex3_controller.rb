@@ -44,7 +44,7 @@ class Ex3Controller < ApplicationController
       out1 * out2 * out3 * out4 * out5
     end
 
-    file_ex = File.open('inputss/inputEx3.1.txt')
+    file_ex = File.open('inputs/inputEx3.1.txt')
     input_ex = file_ex.read
     @example = do_part2(input_ex)
 
