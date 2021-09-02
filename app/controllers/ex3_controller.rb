@@ -1,7 +1,7 @@
 class Ex3Controller < ApplicationController
   def index
 
-    file = File.open('../inputEx3.txt')
+    file = File.open('inputs/inputEx3.txt')
     input = file.read
 
     def parse_input(input, right, down)
@@ -44,7 +44,7 @@ class Ex3Controller < ApplicationController
       out1 * out2 * out3 * out4 * out5
     end
 
-    file_ex = File.open('../inputEx3.1.txt')
+    file_ex = File.open('inputss/inputEx3.1.txt')
     input_ex = file_ex.read
     @example = do_part2(input_ex)
 
